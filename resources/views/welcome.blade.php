@@ -18,16 +18,9 @@
                   <img src="{{ asset('img/moto.png') }}"  height="200px" width="200px" alt="img">
               </div>
           <div class="card-footer bg-transparent border-dark">
-              <table>
-                <thead>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>CILINDRAJE:</td>
-                    <td>171,7 cc</td>
-                  </tr>
-                </tbody>
-              </table>
+              <label for="">CILINDRAJE:</label> 
+              <label for="" style="float: right;">171,7 cc</label>
+              <br>
           </div>
       </div>
     </div>
