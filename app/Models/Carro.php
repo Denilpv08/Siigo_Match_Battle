@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carro extends Model
 {
-    use HasFactory;
+    protected $table = 'tblCarros';
+    protected $primarykey = 'carroId';
+    public $timestamps = false;
 }

@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class VehiculoDatos extends Model
 {
-    use HasFactory;
+    protected $table = 'tblVehiculosDatos';
+    protected $primarykey = 'vehiculoDatoId';
+    protected $fillable = ['nombre', 'foto'];
+    public $timestamps = false;
 }

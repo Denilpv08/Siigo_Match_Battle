@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('_avion', function (Blueprint $table) {
-            $table->id();
+        Schema::create('tblFichasTecnicas', function (Blueprint $table) {
+            $table->bigIncrements('fichaTecnicaId');
+            $table->integer('cilindraje');
+            $table->integer('refrigeracion');
+            $table->integer('potencia');
+            $table->integer('sistemaAlimentacion');
+            $table->integer('torque');
+            $table->integer('velocidad');
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_avion');
+        Schema::dropIfExists('tblFichasTecnicas');
     }
 };

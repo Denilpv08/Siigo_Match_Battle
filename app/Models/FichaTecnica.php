@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class FichaTecnica extends Model
-{
-    use HasFactory;
+{   
+    protected $table = 'tblFichasTenicas';
+    protected $primarykey = 'fichaTecnicaId';
+    protected $fillable = ['cilindraje', 'refrigeracion', 'potencia', 'sistemaAlimentacion', 
+    'torque', 'velocidad'];
+    public $timestamps = false;
+
 }

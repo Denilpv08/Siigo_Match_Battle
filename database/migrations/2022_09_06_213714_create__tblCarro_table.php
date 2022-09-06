@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_motos', function (Blueprint $table) {
-            $table->id();
+        Schema::create('tblCarro', function (Blueprint $table) {
+            $table->carroId();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_motos');
+        Schema::dropIfExists('tblCarro');
     }
 };

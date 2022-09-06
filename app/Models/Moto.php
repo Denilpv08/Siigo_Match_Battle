@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Moto extends Model
 {
-    use HasFactory;
+    protected $table = 'tblMotos';
+    protected $primarykey = 'motosId';
+    public $timestamps = false;
 }
