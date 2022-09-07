@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tblMotos', function (Blueprint $table) {
-            $table->bigIncrements('motoId');
-            $table->bigInteger('fichaTecnicaId');
-            $table->foreign('fichaTecnicaId')->references('fichaTecnicaId')->on('tblFichasTecnicas');
-            $table->bigInteger('vehiculoDatosId');
-            $table->foreign('vehiculoDatosId')->references('vehiculoDatosId')->on('tblVehiculosDatos');
+        Schema::create('motos', function (Blueprint $table) {
+            $table->bigIncrements('moto_id');
+            $table->bigInteger('ficha_tecnica_id')->unsigned();
+            $table->foreign('ficha_tecnica_id')->references('ficha_tecnica_id')->on('fichas_Tecnicas');
+            $table->bigInteger('vehiculo_dato_id')->unsigned();
+            $table->foreign('vehiculo_dato_id')->references('vehiculo_dato_id')->on('vehiculos_datos');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tblMotos');
+        Schema::dropIfExists('motos');
     }
 };

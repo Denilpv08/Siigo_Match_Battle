@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MotoController;
+use App\Http\Controllers\SalaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,43 +16,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// inicio
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/', function () {
-    return view('carta1');
-});
+// moto
+// Route::get('/', [MotoController::class, 'index'])->name('moto.index');
+// Route::post('/', [MotoController::class, 'index'])->name('moto.index');
 
-Route::get('/carta2', function () {
-    return view('carta2');
-});
+// sala
+Route::get('/', [SalaController::class, 'index'])->name('sala.index');
 
-Route::get('/carta3', function () {
-    return view('carta3');
-});
-
-Route::get('/carta4', function () {
-    return view('carta4');
-});
-
-Route::get('/carta5', function () {
-    return view('carta5');
-});
-
-Route::get('/carta6', function () {
-    return view('carta6');
-});
-
-Route::get('/carta7', function () {
-    return view('carta7');
-});
-
-Route::get('/carta8', function () {
-    return view('carta8');
-});
-
-Route::get('/maqueta', function () {
-    return view('maqueta');
-});
-
-Route::get('/usuarios', function(){
-    return view('usuarios.index');
+Route::get('/usuario/{hexa}', function () {
+    $hexa = 0;
+       
+    // generating 6 times as HTML color code consist
+    // of 6 letter or digits
+    for ($i = 1; $i <= 16; $i++){
+       $hexa = substr(md5(rand()), 0, 16);
+    }
+   return view('salas.sala', compact('hexa'));
 });

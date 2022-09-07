@@ -10,32 +10,37 @@
   </head>
   <body>
 
+  @for ($index = 1; $index < 7; $index++)
   <div class="row" style="margin: auto;">
     <div class="col-sm-12">
      <div class="card border-dark mb-3" style="max-width: 20rem; background-color: #333333; color: rgb(248 248 255);">
           <div class="card-header bg-transparent border-dark">1 A</div>
               <!--<div class="card-body">-->
-                  <img src="{{ asset('img/moto.png') }}"  height="310px" width="318px" alt="img">
-              <!--</div>-->
-          <div class="card-footer bg-transparent border-dark">
-              <label for="">CILINDRAJE:</label> 
-              <label for="" style="float: right;">171,7 cc</label>
-              <br>
-              <label for="">POTENCIA:</label> 
-              <label for="" style="float: right;">11.3 HP @ 7500 rpm</label>
-              <br>
-              <label for="">TORQUE:</label> 
-              <label for="" style="float: right;">11.7 Nm @ 6000 rpm</label>
-              <br>
-              <label for="">ALINEACION:</label> 
-              <label for="" style="float: right;">Inyección electrónica</label>
-              <br>
-              <label for="">REFRIGERACIÓN:</label> 
-              <label for="" style="float: right;">Aire forzado</label>
-          </div>
+            @foreach ($motos as $moto)
+            <img src="{{ $moto->nombre}} }}"  height="310px" width="318px" alt="img">
+                    <!--</div>-->
+              <div class="card-footer bg-transparent border-dark">
+                  <label for="">CILINDRAJE:</label> 
+                      <label for="" style="float: right;">171,7 cc</label>
+                      <br>
+                      <label for="">POTENCIA:</label> 
+                      <label for="" style="float: right;">11.3 HP @ 7500 rpm</label>
+                      <br>
+                      <label for="">TORQUE:</label> 
+                      <label for="" style="float: right;">11.7 Nm @ 6000 rpm</label>
+                      <br>
+                      <label for="">ALINEACION:</label> 
+                      <label for="" style="float: right;">Inyección electrónica</label>
+                      <br>
+                      <label for="">REFRIGERACIÓN:</label> 
+                      <label for="" style="float: right;">Aire forzado</label>
+                  </div>
+            @endforeach;
+            
       </div>
     </div>
   </div>
+  @endfor;
 
     
 

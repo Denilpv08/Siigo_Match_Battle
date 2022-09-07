@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tblAvion', function (Blueprint $table) {
-            $table->avionId();
+        Schema::create('salas', function (Blueprint $table) {
+            $table->bigIncrements('sala_id');
+            $table->tinyInteger('estado');
+            $table->BigInteger('usuario_id')->unsigned();
+            $table->foreign('usuario_id')->references('usuario_id')->on('usuarios');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tblAvion');
+        Schema::dropIfExists('salas');
     }
 };

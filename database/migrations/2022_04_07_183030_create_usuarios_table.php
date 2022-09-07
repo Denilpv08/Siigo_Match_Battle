@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tblCarro', function (Blueprint $table) {
-            $table->carroId();
+        Schema::create('usuarios', function (Blueprint $table) {
+            $table->bigIncrements('usuario_id');
+            $table->string('nombres');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tblCarro');
+        Schema::dropIfExists('usuarios');
     }
 };

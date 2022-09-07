@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tblVehiculosDatos', function (Blueprint $table) {
-            $table->bigIncrements('vehiculoDatoId');
+        Schema::create('vehiculos_datos', function (Blueprint $table) {
+            $table->bigIncrements('vehiculo_dato_id');
             $table->string('nombre',20);
             $table->binary('foto');
             $table->timestamps();
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tblVehiculosDatos');
+        Schema::dropIfExists('vehiculos_datos');
     }
 };

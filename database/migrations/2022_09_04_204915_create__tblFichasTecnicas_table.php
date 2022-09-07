@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tblFichasTecnicas', function (Blueprint $table) {
-            $table->bigIncrements('fichaTecnicaId');
+        Schema::create('fichas_Tecnicas', function (Blueprint $table) {
+            $table->bigIncrements('ficha_tecnica_id');
             $table->integer('cilindraje');
             $table->integer('refrigeracion');
             $table->integer('potencia');
-            $table->integer('sistemaAlimentacion');
+            $table->integer('sistema_alimentacion');
             $table->integer('torque');
             $table->integer('velocidad');
             $table->timestamps();
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tblFichasTecnicas');
+        Schema::dropIfExists('fichas_Tecnicas');
     }
 };
