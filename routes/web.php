@@ -1,5 +1,5 @@
 <?php
-
+use GuzzleHttp\Psr7\Uri;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MotoController;
 use App\Http\Controllers\SalaController;
@@ -37,4 +37,9 @@ Route::get('/usuario/{hexa}', function () {
        $hexa = substr(md5(rand()), 0, 16);
     }
    return view('salas.sala', compact('hexa'));
+});
+
+Route::get('/chat/', function () {
+    event(new \App\Events\PublicMessage ());
+    dd(vars: 'Public evente executed successfully');
 });
